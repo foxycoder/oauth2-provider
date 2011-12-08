@@ -12,12 +12,12 @@ class OAuth2::Provider::Models::Mongoid::AuthorizationCode
 
       referenced_in(:authorization,
         :class_name => OAuth2::Provider.authorization_class_name,
-        :foreign_key => :oauth_authorization_id
+        :foreign_key => :authorization_id
       )
 
       referenced_in(:client,
         :class_name => OAuth2::Provider.client_class_name,
-        :foreign_key => :oauth_client_id
+        :foreign_key => :client_id
       )
 
       before_save do

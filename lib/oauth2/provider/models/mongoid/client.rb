@@ -13,17 +13,17 @@ class OAuth2::Provider::Models::Mongoid::Client
 
       references_many(:authorizations,
         :class_name => OAuth2::Provider.authorization_class_name,
-        :foreign_key => :oauth_client_id
+        :foreign_key => :client_id
       )
 
       references_many(:access_tokens,
         :class_name => OAuth2::Provider.access_token_class_name,
-        :foreign_key => :oauth_client_id
+        :foreign_key => :client_id
       )
 
       references_many(:authorization_codes,
         :class_name => OAuth2::Provider.authorization_code_class_name,
-        :foreign_key => :oauth_client_id
+        :foreign_key => :client_id
       )
     end
 
